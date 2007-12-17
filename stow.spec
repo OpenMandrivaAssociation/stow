@@ -12,7 +12,6 @@ Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.bz2
 # (blino) from upstream CVS
 Patch0: stow-1.3.3-root_foo.patch.bz2
 URL: http://www.gnu.org/software/stow/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildArch: noarch
 
 %description
