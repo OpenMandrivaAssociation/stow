@@ -33,10 +33,10 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall
 
 %post
-/sbin/install-info %{_infodir}/%{name}.info.bz2 %{_infodir}/dir 
+%_install_info %name
 
 %postun
-/sbin/install-info --delete %{_infodir}/%{name}.info.bz2 %{_infodir}/dir 
+%_remove_install_info %name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
