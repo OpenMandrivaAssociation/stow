@@ -1,6 +1,6 @@
 %define name stow
 %define version 1.3.3
-%define release %mkrel 2
+%define release %mkrel 4
 
 Summary: Separate software packages manager
 Name: %{name}
