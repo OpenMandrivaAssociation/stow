@@ -1,11 +1,7 @@
-%define name stow
-%define version 1.3.3
-%define release %mkrel 6
-
 Summary: Separate software packages manager
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name: stow
+Version: 2.1.1
+Release: 1
 License: GPL
 Group: System/Configuration/Packaging
 Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.bz2
@@ -23,24 +19,13 @@ example) while making them appear to e installed in the same place
 
 %prep
 %setup -q
-%patch0 -p1 -b .root_foo
 
 %build
 %configure2_5x 
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall
-
-%post
-%_install_info %name
-
-%postun
-%_remove_install_info %name
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,0755)
@@ -48,4 +33,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_infodir}/*
 %{_mandir}/man8/stow.*
-
+%{_usr}/lib/perl5/site_perl/
