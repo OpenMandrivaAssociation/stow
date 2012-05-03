@@ -1,14 +1,13 @@
 Summary: Separate software packages manager
 Name: stow
-Version: 2.1.1
+Version: 2.2.0
 Release: 1
 License: GPL
 Group: System/Configuration/Packaging
-Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.bz2
+Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
 # (blino) from upstream CVS
 Patch0: stow-1.3.3-root_foo.patch.bz2
 URL: http://www.gnu.org/software/stow/
-BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildArch: noarch
 
 %description
