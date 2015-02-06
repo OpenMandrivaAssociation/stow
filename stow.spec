@@ -1,7 +1,7 @@
 Summary: Separate software packages manager
 Name: stow
 Version: 2.2.0
-Release: 1
+Release: 2
 License: GPL
 Group: System/Configuration/Packaging
 Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
