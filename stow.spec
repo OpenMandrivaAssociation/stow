@@ -7,7 +7,7 @@ Group: System/Configuration/Packaging
 Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
 # (blino) from upstream CVS
 Patch0: stow-1.3.3-root_foo.patch.bz2
-URL: http://www.gnu.org/software/stow/
+URL: https://www.gnu.org/software/stow/
 BuildArch: noarch
 
 %description
