@@ -1,41 +1,46 @@
 Summary: Separate software packages manager
 Name: stow
-Version: 2.2.0
-Release: 2
-License: GPL
+Version: 2.4.1
+Release: 1
+License: GPLv3
 Group: System/Configuration/Packaging
-Source0: ftp://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
-# (blino) from upstream CVS
-Patch0: stow-1.3.3-root_foo.patch.bz2
+Source0: https://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
 URL: https://www.gnu.org/software/stow/
 BuildArch: noarch
 
+BuildRequires:  perl-Test-Output
 %description
 GNU Stow is a program for managing the installation of software packages,
 keeping them separate (/usr/local/stow/emacs vs. /usr/local/stow/perl, for
 example) while making them appear to e installed in the same place
 (/usr/local).
 
+
 %prep
 %setup -q
 
 %build
-%configure2_5x 
-%make
+./configure --prefix=%{_prefix} --bindir=%{_bindir} --with-pmdir=%{_usr}/share/perl5/vendor_perl/ && make
 
 %install
-%makeinstall
+%make_install
+cd $RPM_BUILD_ROOT/usr/share/doc/stow/
+rm -f ChangeLog* README.md INSTALL.md version.texi
+rm -rf manual-split manual-single.html
 
 %files
 %defattr(-,root,root,0755)
-%doc AUTHORS COPYING NEWS README THANKS TODO
+%doc AUTHORS ChangeLog NEWS README.md THANKS TODO
 %{_bindir}/*
 %{_infodir}/*
 %{_mandir}/man8/stow.*
-%{_usr}/lib/perl5/site_perl/
+%{_usr}/share/perl5/vendor_perl/
 
 
 %changelog
+* Tue Feb 18 2025 Christian Olsson <chrols@chrols.se> 2.4.1-1
+- version update 2.4.1
+
 * Thu May 03 2012 Alexander Khrukin <akhrukin@mandriva.org> 2.2.0-1
 + Revision: 795287
 - version update 2.2.0
