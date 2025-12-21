@@ -8,6 +8,11 @@ Source0: https://ftp.gnu.org/gnu/stow/%{name}-%{version}.tar.gz
 URL: https://www.gnu.org/software/stow/
 BuildArch: noarch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  perl-Test-Output
 %description
 GNU Stow is a program for managing the installation of software packages,
